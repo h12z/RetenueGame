@@ -88,14 +88,25 @@ body {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" src="retenue_1.0.0.png" alt="">
+			<img id="status-splash" src="index.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="retenue_1.0.0.js"></script>
+		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":0,"ensureCrossOriginIsolationHeaders":true,"executable":"retenue_1.0.0","experimentalVK":false,"fileSizes":{"retenue_1.0.0.pck":269504,"retenue_1.0.0.wasm":1642043},"focusCanvas":false,"gdextensionLibs":[]};
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/coi-serviceworker.js')
+        .then((registration) => {
+            console.log("COI Service Worker registered:", registration);
+        })
+        .catch((error) => {
+            console.error("COI Service Worker registration failed:", error);
+        });
+}
+
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":272544,"index.wasm":1642043},"focusCanvas":false,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = true;
 const engine = new Engine(GODOT_CONFIG);
 
