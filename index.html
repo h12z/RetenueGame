@@ -92,16 +92,6 @@ body {
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
-
-		<script>
-			if("serviceWorker" in navigator) {
-
-				navigator.serviceWorker.register("/coi-serviceworker.js?v=1").then((registration) => {
-				}).catch((error) => {
-				}
-
-			}
-		</script>
 		
 		<script src="index.js"></script>
 		<script>
