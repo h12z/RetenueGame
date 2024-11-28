@@ -93,19 +93,18 @@ body {
 			<div id="status-notice"></div>
 		</div>
 
+		<script>
+			if("serviceWorker" in navigator) {
+
+				navigator.serviceWorker.register("/coi-serviceworker.js").then((registration) => {
+				}).catch((error) => {
+				}
+
+			}
+		</script>
+		
 		<script src="index.js"></script>
 		<script>
-
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/coi-serviceworker.js')
-        .then((registration) => {
-            console.log("COI Service Worker registered:", registration);
-        })
-        .catch((error) => {
-            console.error("COI Service Worker registration failed:", error);
-        });
-}
-
 const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":272544,"index.wasm":1642043},"focusCanvas":false,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = true;
 const engine = new Engine(GODOT_CONFIG);
